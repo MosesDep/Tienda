@@ -1,0 +1,65 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+{% for datoss in  datos %}
+
+
+<a href="{% url 'report'  datoss.email  %}"> <button type="submit" class="boton-cv2" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em; font-family:Bebas Neue; "> Generar Reporte PDF  </button></a>
+<a href="{% url 'eliminarindi'  datoss.email  %}"> <button type="submit" class="boton-cv" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em; font-family:Bebas Neue; "> Eliminar Usuario   </button></a>
+
+
+{% endfor %}
+
+<div style="margin-left:100px; margin-right:100px;"> 
+
+
+
+
+     <table class="table" style="color:white; margin-top: 20vw; font-family: Bebas Neue;" border="1"> 
+
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Nacimiento</th>
+        <th scope="col">Origen</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Password</th>
+        <th scope="col">Creado</th>
+        <th scope="col">Correo</th>
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for datoss in  datos %}
+
+
+ 
+      <tr>
+ 
+        <td>{{datoss.nombre}}</td>
+        <td>{{datoss.apellido}}</td>
+        <td>{{datoss.nacimiento}}</td>
+        <td>{{datoss.origen}}</td>
+        <td>{{datoss.sexo}}</td>
+        <td>{{datoss.password}}</td>
+        <td>{{datoss.creado}}</td>
+        <td>{{datoss.email}}</td>
+
+
+
+      </tr>
+      
+    </tbody>
+
+    {% endfor %}
+
+  </table>
+</div>
+
+{% endblock %}

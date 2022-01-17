@@ -1,0 +1,50 @@
+ {% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+
+ 
+<div class="contact">
+	
+<div class="contact-heading">
+	
+	<h2>Contactanos <span>Para Mas</span> </h2>
+
+	<div class="divider"></div>
+	
+	</div>
+
+
+<div class="container-contact">
+	<div class="contactofoto"> 
+
+<a href="{% url 'inicio' %}"  ><img src="{% static 'Busapp/img/Logo.png' %}" style=" width: 400px; height: 400px; margin-left:150px; margin-top:100px;" > </a>
+
+	</div>
+<div class="contact-form" >
+	
+	<h4> Envianos un Mensaje</h4>
+
+	<form method="POST" class="form-control">
+	 {% csrf_token %}
+
+
+ 	<input type="text" name="name" placeholder="Ingresa tu Nombre " required>
+ 	<input type="email" name="Email" placeholder="Ingresa tu Correo" required pattern= "?@gmail.com |?@outlook.com">
+ 	<textarea style="background: none; height: 150px; color: #fff; border-bottom: 1px solid #fff; padding: 1.5em;" placeholder="Deja tu Mensaje  Aqui " name="contenido" required > </textarea>
+  	<button type="submit" class="boton-cv" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em;"> Envianos un Mensaje  </button>
+
+
+	</form>
+
+
+</div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+<div>
+
+<p>
+
+
+
+
+
+
+
+
+
+
+</p>
+
+
+
+
+</div>
+
+ 
+
+<div id="carousel" class="carousel slide" data-ride="carousel" style="margin: 0 auto; margin-top: 50px; margin-left: 30px; margin-right: 30px; 	border: 7px solid aqua;">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <a href=""><img class="d-block w-100" src="{% static 'Busapp/img/1.2.png' %}" style="heigth 50px;" alt="First slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src= "{% static 'Busapp/img/1.png' %}"alt="Second slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+         
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src="{% static 'Busapp/img/5.2.png' %}" alt="Third slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+
+   <!-- Heading -->
+   <section class="page-section clearfix">
+     <div class="container"> 
+       <div class="intro" style="background-color:  rgba(40, 40, 43);" > 
+        <a href="" style="text-decoration: none;">><img class="intro-img img-fluid mb-3 mb-lg-0 rounded"  style="	border: 7px solid aqua;" src="{% static 'Busapp/img/fondo.png' %}" alt=""></a>
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded" style="margin-left: 15em; margin-top: 10em; 	border: 7px solid white">
+          <h2 class="section-heading mb-4" >
+            <a href="" style="text-decoration: none;"> <span class="section-heading-upper" style="color: white ;">La mejor pagina de Ventas de Boletos a nivel estatal, regional y  Nacional  </span></a>
+            <a href="" style="text-decoration: none;"><span class="section-heading-lower" style="color: white; ">Noticias </span></a>
+          </h2>
+          <a href="" style="text-decoration: none;"><p class="mb-3" style="color: white; ">Te informamos de todo lo que pasa en el sector transporte  y Compra de  boletos  
+          </p> </a>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+    <!-- Message -->
+    <section class="page-section cta"  style="background-color:  rgba(40, 40, 43);">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto"  >
+            <div class="cta-inner text-center rounded"  style="background-color:  rgba(40, 40, 43); 	border: 7px solid white;">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Compromiso total</span>
+                <span class="section-heading-lower">Garantizado</span>
+              </h2>
+              <h4 class="mb-0" style="font-family: Bebas-Neue ">Con mas de 5 Años especializados en los servicios de transporte masivo de personas. </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   {% endblock %}
+
+
+
+   

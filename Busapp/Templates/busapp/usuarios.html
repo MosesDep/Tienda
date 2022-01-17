@@ -1,0 +1,73 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+	
+
+<a href="{% url 'repostar'    %}"> <button type="submit" class="boton-cv2" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em; font-family:Bebas Neue; "> Generar Reporte PDF  </button></a>
+
+<div class="busqueda"> 
+<form class="d-flex" method="GET">
+
+  <input class="buscador"  style="border-radius: 200px;" type="search" placeholder="Search" aria-label="Search" name="buscar"  >
+  <a href=""><button class="boton-cv" type="submit">Search</button></a>
+
+   
+</form>
+
+
+
+</div>
+<div style="margin-left:100px; margin-right:100px;"> 
+
+
+
+
+     <table class="table" style="color:white; margin-top: 20vw; font-family: Bebas Neue;" border="1"> 
+
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Nacimiento</th>
+        <th scope="col">Origen</th>
+        <th scope="col">Sexo</th>
+        <th scope="col">Password</th>
+        <th scope="col">Creado</th>
+        <th scope="col">Correo</th>
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for datoss in  datos %}
+
+
+ 
+      <tr>
+ 
+        <td>{{datoss.nombre}}</td>
+        <td>{{datoss.apellido}}</td>
+        <td>{{datoss.nacimiento}}</td>
+        <td>{{datoss.origen}}</td>
+        <td>{{datoss.sexo}}</td>
+        <td>{{datoss.password}}</td>
+        <td>{{datoss.creado}}</td>
+        <td><a href="{% url 'indisu' datoss.email    %}"> {{datoss.email}} </a> </td>
+
+
+
+      </tr>
+      
+    </tbody>
+
+    {% endfor %}
+
+  </table>
+</div>
+
+{% endblock %}

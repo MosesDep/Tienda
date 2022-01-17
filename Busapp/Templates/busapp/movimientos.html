@@ -1,0 +1,70 @@
+
+
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+<a href="{% url 'PDF' request.session.email   %}"> <button type="submit" class="boton-cv2" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em; font-family:Bebas Neue; "> Generar Reporte PDF  </button></a>
+
+
+<h2> Reporte 
+
+<div class="busqueda"> 
+
+  <form class="d-flex" method="GET">
+  
+    <input style=" width:600px; height:50px; background:none; border-radius: 200px;  "type="search" placeholder="Search" aria-label="Search" name="buscar"  >
+    <a href=""><button class="boton-cv" type="submit">Search</button></a>
+  
+     
+  </form>
+  </div>
+
+
+<div style="margin-left:100px; margin-right:100px;"> 
+
+ 
+
+<table class="table" style="color:white; margin-top: 20vw; font-family: Bebas Neue;" id="tablita"> 
+    <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Fecha</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for datoss in  datos %}
+
+
+ 
+      <tr>
+
+        <td> <a href="{% url 'detalle' datoss.campo %}" style="text-decoration: none; "> {{datoss.campo}} </a></td>
+        <td>{{datoss.mail}}</td>
+        <td>{{datoss.precio}}</td>
+        <td>{{datoss.producto}}</td>
+        <td>{{datoss.cantidad}}</td>
+        <td>{{datoss.fecha}}</td>
+
+      </tr>
+      
+    </tbody>
+
+    {% endfor %}
+
+  </table>
+
+</div>
+
+ 
+  {% endblock %}

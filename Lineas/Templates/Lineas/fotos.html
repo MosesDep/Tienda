@@ -1,0 +1,241 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% for fotoss in pictures %}
+
+{% if fotoss.linea == "Aero Expresos Ejecutivos" %}
+
+
+<div id="carousel" class="carousel slide" data-ride="carousel" style="margin: 0 auto; margin-top: 50px; margin-left: 30px; margin-right: 30px; 	border: 7px solid aqua;">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <a href=""><img class="d-block w-100" src="{% static 'Busapp/img/3.2.png' %}" style="heigth 50px;" alt="First slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src= "{% static 'Busapp/img/express.png' %}"alt="Second slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+         
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src="{% static 'Busapp/img/3.png' %}" alt="Third slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+
+{% endif %}
+
+
+
+{% if fotoss.linea == "Expreso los Llanos" %}
+
+
+<div id="carousel" class="carousel slide" data-ride="carousel" style="margin: 0 auto; margin-top: 50px; margin-left: 30px; margin-right: 30px; 	border: 7px solid aqua;">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <a href=""><img class="d-block w-100" src="{% static 'Busapp/img/llanos.png' %}" style="heigth 50px;" alt="First slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src= "{% static 'Busapp/img/foto1.png' %}"alt="Second slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+         
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src="{% static 'Busapp/img/foto2.png' %}" alt="Third slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src= "{% static 'Busapp/img/foto6.png' %}"alt="Second slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+         
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src= "{% static 'Busapp/img/foto8.png' %}"alt="Second slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+         
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+
+{% endif %}
+
+
+
+{% if fotoss.linea == "Rodovias" %}
+
+
+<div id="carousel" class="carousel slide" data-ride="carousel" style="margin: 0 auto; margin-top: 50px; margin-left: 30px; margin-right: 30px; 	border: 7px solid aqua;">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <a href=""><img class="d-block w-100" src="{% static 'Busapp/img/1.1.png' %}" style="heigth 50px;" alt="First slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src= "{% static 'Busapp/img/2.2.png' %}"alt="Second slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+         
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src="{% static 'Busapp/img/rodo.png' %}" alt="Third slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+
+{% endif %}
+
+
+{% if fotoss.linea == "Expresos Occidente" %}
+
+
+<div id="carousel" class="carousel slide" data-ride="carousel" style="margin: 0 auto; margin-top: 50px; margin-left: 30px; margin-right: 30px; 	border: 7px solid aqua;">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <a href=""><img class="d-block w-100" src="{% static 'Busapp/img/4.png' %}" style="heigth 50px;" alt="First slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src= "{% static 'Busapp/img/kk.jpg' %}"alt="Second slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+         
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src="{% static 'Busapp/img/4.1.png' %}" alt="Third slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+
+{% endif %}
+
+{% if fotoss.linea == "Travel Tech" %}
+
+
+<div id="carousel" class="carousel slide" data-ride="carousel" style="margin: 0 auto; margin-top: 50px; margin-left: 30px; margin-right: 30px; 	border: 7px solid aqua;">
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <a href=""><img class="d-block w-100" src="{% static 'Busapp/img/foto7.png' %}" style="heigth 50px;" alt="First slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src= "{% static 'Busapp/img/foto3.png' %}"alt="Second slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+         
+      </div>
+    </div>
+    <div class="carousel-item">
+      <a href=""><img class="d-block w-100" src="{% static 'Busapp/img/Logo.png' %}" alt="Third slide"></a>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+
+{% endif %}
+{% endfor %}
+
+{% endblock %}
+
+
+
+ 

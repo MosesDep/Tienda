@@ -1,0 +1,80 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+{% for datoss in datos %}
+
+<a href="{% url 'reportesolo' datoss.nombre     %}"> <button type="submit" class="boton-cv2" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em; font-family:Bebas Neue; "> Generar Reporte PDF  </button></a>
+
+
+<a href="{% url 'eliminarlinea'  datoss.nombre  %}"> <button type="submit" class="boton-cv" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em; font-family:Bebas Neue; "> Eliminar Usuario   </button></a>
+
+{% endfor %}
+
+
+
+
+<div class="busqueda"> 
+  <form class="d-flex" method="GET">
+  
+    <input class="buscador"  style="border-radius: 200px;" type="search" placeholder="Search" aria-label="Search" name="buscar"  >
+    <a href=""><button class="boton-cv" type="submit">Search</button></a>
+  
+     
+  </form>
+
+<div style="margin-left:100px; margin-right:100px;"> 
+
+
+
+
+
+  
+
+
+
+
+     <table class="table" style="color:white; margin-top: 20vw; font-family: Bebas Neue;" border="1"> 
+
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Inicio</th>
+        <th scope="col">Creador</th>
+        <th scope="col">Descripcion</th>
+         
+
+
+
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for datoss in  datos %}
+
+
+ 
+      <tr>
+ 
+        <td>{{datoss.nombre}}</td>
+        <td>{{datoss.tipo}}</td>
+        <td>{{datoss.inicio}}</td>
+        <td>{{datoss.creadorpor}}</td>
+        <td>{{datoss.descripcion}}</td>
+        
+
+
+      </tr>
+      
+    </tbody>
+
+    {% endfor %}
+
+  </table>
+</div>
+
+{% endblock %}

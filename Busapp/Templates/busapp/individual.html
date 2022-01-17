@@ -1,0 +1,58 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% for datoss in  datos %}
+
+
+<a href="{% url 'reporteindi' datoss.campo %}"> <button type="submit" class="boton-cv2" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em; margin-left: 5em; font-family:Bebas Neue; "> Generar Reporte PDF  </button></a>
+ 
+
+{% endfor %}
+<div style="margin-left:100px; margin-right:100px;"> 
+
+
+<table class="table" style="color:white; margin-top: 20vw;" border="1"> 
+
+    <caption>Reporte De Usuario </caption>
+
+
+    <thead>
+      
+      <tr>
+        <th scope="col">Campo</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Fecha</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for datoss in  datos %}
+
+
+ 
+      <tr>
+
+        <td>{{datoss.campo}}</td>
+        <td>{{datoss.mail}}</td>
+        <td>{{datoss.precio}}</td>
+        <td>{{datoss.producto}}</td>
+        <td>{{datoss.cantidad}}</td>
+        <td>{{datoss.fecha}}</td>
+
+      </tr>
+      
+    </tbody>
+
+    {% endfor %}
+  </table>
+
+</div>
+
+{% endblock %}

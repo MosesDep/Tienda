@@ -1,0 +1,57 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="busqueda"> 
+  <form class="d-flex" method="GET">
+  
+    <input class="buscador"  style="border-radius: 200px;" type="search" placeholder="Search" aria-label="Search" name="buscar"  >
+    <a href=""><button class="boton-cv" type="submit">Search</button></a>
+  
+     
+  </form>
+
+<div style="margin-left:100px; margin-right:100px;"> 
+
+ 
+  <table border="1" style="color:black;" >
+    <caption>Reporte De Usuario </caption>
+
+
+    <thead>
+      
+      <tr>
+        <th scope="col">Correo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Fecha</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for datoss in  datos %}
+
+
+ 
+      <tr>
+ 
+        <td>{{datoss.mail}}</td>
+        <td>{{datoss.precio}}</td>
+        <td>{{datoss.producto}}</td>
+        <td>{{datoss.cantidad}}</td>
+        <td>{{datoss.fecha}}</td>
+
+      </tr>
+      
+    </tbody>
+
+    {% endfor %}
+  </table>
+
+</div>
+
+{% endblock %}

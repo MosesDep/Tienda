@@ -1,0 +1,79 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+
+
+<h2 style="color:aqua; margin-left: 18em; margin-top: 5em; font-family: Bebas Neue; text-transform: uppercase; "> Perfil de Usuario </h2> 
+
+
+<a href="{% url 'inicio' %}"  ><img src="{% static 'Busapp/img/batman.png' %}" style=" width: 400px; height: 400px; margin-left:20px; margin-top:-50px;" > </a>
+
+ 
+
+{% for datoss in  datos %}
+
+
+ 
+
+ 
+ 
+<div class="form-reg">
+
+
+ 
+
+
+  Correo: 	<input type="email" name="Email" value={{datoss.email}} style="margin-left: 200px; width:500px; " readonly>
+ 	Nombre: <input type="text" name="name" value={{datoss.nombre}}  style="margin-left: 200px; width:500px; "readonly >
+ 	Apellido: <input type="text" name="last"  value={{datoss.apellido}} style="margin-left: 200px; width:500px; "readonly>
+	
+	
+  <div>
+
+ 
+  Origen:<input type="text" name="origen" style="margin-left: 200px; width:500px; " placeholder="Ingresa tu Lugar de Origen " value={{datoss.origen}}   readonly  >
+  Genero:<input type="text" name="origen"  style="margin-left: 200px; width:500px; "placeholder="Ingresa tu Lugar de Origen "  value={{datoss.sexo}}  readonly  >
+
+
+	Contraseña: <input type="password" style="background: none; margin-left: 200px; width:500px;"  name="contra" value={{datoss.password}} readonly>
+
+  
+</div>
+
+ 
+ 
+
+ 
+
+ 
+
+ 
+  
+
+
+{% endfor %}
+
+ 	 
+   
+
+<div class="botones"> 
+
+<a href="{% url 'cerrando' %}"><button type="submit" class="boton-cv" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em; font-family:Bebas Neue; "> Cerrar Sesion </button></a>
+<a href="{% url 'editar' request.session.email %}"><button type="submit" class="boton-cv" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em; font-family:Bebas Neue; "> Editar  </button> </a>
+<a href="{% url 'eliminar' request.session.email %}"><button type="submit" class="boton-cv" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em; font-family:Bebas Neue; "> Eliminar </button></a>
+
+</div> 
+ 
+</div>
+ 
+
+ 
+ 
+
+{% endblock %}

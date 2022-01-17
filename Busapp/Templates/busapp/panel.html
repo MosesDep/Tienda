@@ -1,0 +1,33 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+ 
+<h2 style="color:aqua; margin-left:500px; margin-top:100px;"> Panel de Administrador </h2>
+
+ 
+    <a href="{% url 'Usu'    %}"><img src="{% static 'Busapp/img/usuario.png' %}" style=" margin-left:100px;  margin-top:100px; " > </a>
+
+
+
+
+
+
+    <a href="{% url 'vista'    %}"><img src="{% static 'Busapp/img/reporte.png' %}" style="margin-left:100px;  margin-top:100px;   border: 7px solid aqua;" > </a>
+
+
+
+
+
+
+
+    <a href="{% url 'grafico'    %}"><img src="{% static 'Busapp/img/stats.png' %}"  style="margin-left:100px;  margin-top:100px;   border: 7px solid aqua;"> </a>
+
+
+
+
+
+
+{% endblock %}

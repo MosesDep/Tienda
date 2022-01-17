@@ -1,0 +1,94 @@
+<table class="table table-bordered" style="color: white;  border: 7px solid aqua">
+
+<thead>
+
+            <tr>
+
+
+                <th colspan="3" class="text-center">
+                
+                    <span>  Carro  De Compras </span> 
+
+                </th>
+            
+            
+            
+            </tr>
+
+            <tr>
+            
+                <th> Destino </th>
+                <th> Cantidad </th>
+                <th> Suma </th>
+
+            
+            
+            </tr>
+        
+        
+        
+        </thead>
+
+
+        <tbody>
+
+            {% if request.session.carro.items %}
+
+                {% for key, value in request.session.carro.items%}
+
+                    <tr class="text-center">
+                        <td> {{value.destino}}</td>
+                        <td> {{value.cantidad}}</td>
+                        <td> 
+                        <a href="{% url 'carro:agregar' value.destino %}" class="btn btn-sm btn-success">+</a>
+                        <a href="{% url 'carro:restar' value.destino %}" class="btn btn-sm btn-success">-</a>
+
+                             {{value.precio}} 
+                        </td>
+
+                    
+                     </tr>
+
+
+
+                {% endfor %}
+
+
+            {% else %}
+                <tr>
+                    <td colspan="3">
+                        <div class="alert alert-danger text-center">
+                        
+                            Sin Productos
+                        
+                        </div>
+                    
+                    </td>
+                
+                
+                </tr>
+
+            {% endif %}
+
+
+        </tbody>
+
+
+        <tfoot>
+            <tr>
+
+                <td colspan="3">
+                Total:{{importe_total_carro}} $
+                <a href={% url 'carro:limpiar'  %} ><button class="boton-cv" data-toggle="tooltip" data-placement="top" title="Limpiar el Carro"style="color: black; background-color:aqua;"> Limpiar</button></a>
+                <a href="{% url 'qr' %}"><button class="boton-cv" data-toggle="tooltip" data-placement="top" title="Comprar"style="color: black; background-color:aqua;"> Comprar</button></a>
+                Cantidad:{{cantidad_proce}}
+                </td>
+
+            </tr>
+
+        
+        </tfoot>
+
+
+
+</table> 

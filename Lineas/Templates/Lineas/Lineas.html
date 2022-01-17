@@ -1,0 +1,82 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="row" style="margin-bottom: 100px; margin-top: 40px;"> 
+
+{% for list in line %}
+
+    <div class="col-md-3" style="margin-left: 5em;">
+    
+    <div class="card" style="width: 100%; margin: 10px 10px; margin-top: 50px; ">
+    
+ 
+          <img src="{{list.foto.url}}" class="carta">
+                   <div class="card__title">
+		                <a href="{% url 'Fotos' list.nombre %}" style="text-decoration: none; color:aqua; "> <h2>{{list.nombre}}</h2> </a>
+		                <p> {{list.descripcion}} </p>
+
+	                  </div>
+          
+            
+          <div class="card-footer text-center" > 
+          
+          <a href="{% url 'Fotos' list.nombre %}" >
+	              <button class="  boton-cv"> 
+	                	Ver Precios  
+	              </button>
+	        </a>
+          </div>
+          
+      </div>
+  </div>
+
+
+  
+  
+
+
+    
+  
+
+
+    
+{% endfor %}
+
+
+  </div>
+</div>
+
+<div style="color: white; font-family: Bebas Neue; margin-left:500px; "> 
+ 
+ 
+  Pagina : {{line.number}} De {{line.paginator.num_pages}}</br>
+ 
+</div>
+
+<div style="color: white; font-family: Bebas Neue; justify:center;  margin-left:500px; "> 
+
+{% if line.has_previous %}
+
+<a href="?page=1"  style="text-decoration: none;">&laquo Primera</a>
+<a href="?page={{line.previous_page_number}}"  style="text-decoration: none;">Pagina Previa </a>
+
+{% endif %}
+
+{% if line.has_next %}
+
+ <a href="?page={{line.next_page_number}}" style="text-decoration: none;"> Proxima Pagina  </a>
+
+ <a href="?page={{line.paginator.num_pages}}"  style="text-decoration: none;"> Ultima </a>
+
+ 
+</div>
+
+
+{% endif %}
+
+
+
+{% endblock %}

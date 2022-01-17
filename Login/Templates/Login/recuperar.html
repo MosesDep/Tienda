@@ -1,0 +1,49 @@
+{% extends "Busapp/base.html"%}
+
+
+{% load static %}
+
+
+{% block content %}
+
+
+
+{% if messages %}
+
+    {% for message in messages%}
+    <p style="color: white;">{{message}}</p>
+    <div class="alert alert-info" role="alert">
+      
+   </div>
+    {% endfor %}
+
+    {% endif %}
+
+
+<div class="conteiner-login"> 
+
+<h5 style="margin-bottom: 5em; margin-left: 4em;"> Cambio de Contraseña    </h5>
+
+<form method="POST" class="login-form"> 
+ {% csrf_token %}
+
+<input type="text" name="correo" placeholder="Ingresa Tu Correo de Nuevo  "   required pattern= "?@gmail.com |?@outlook.com" style="margin-left:50px;"> 
+<input type="password" name="contrasena" placeholder="Ingresa tu Contraseña Nueva " style="margin-left:50px;" >
+<input type="password" name="contrasena2" placeholder="Verifica Tu   Contraseña"  style="margin-left:50px;">
+
+
+<button type="submit" class="boton-cv" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em; font-family:Bebas Neue; "> Verificar Correo  </button>
+
+</form> 
+
+
+ 
+
+
+
+</div>
+
+
+
+
+{% endblock %}

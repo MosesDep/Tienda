@@ -1,0 +1,128 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+
+    
+
+
+
+
+
+
+<div class="container" style="margin-top:50px; margin-left: 150px;">
+
+  <div style="float:right;"> 
+  
+ 
+
+  {% if request.session.email%}
+
+ 
+  {% include "Carro/widget.html" %}
+
+  {% endif %}
+
+
+  
+</div>
+{
+
+  
+
+  </div>
+
+  <div class="carrito">
+
+  <form class="d-flex" method="GET">
+
+    <input style=" width:600px; height:50px; background:none; "type="search" placeholder="Buscar Boletos de Viaje " aria-label="Search" name="buscar"  >
+    <a href=""><button class="boton-cv" type="submit">Buscar  </button></a>
+
+     
+  </form>
+
+</div> 
+
+
+<div class="row" style="margin-bottom: 100px; margin-top: 40px;"> 
+
+{% for boletos in line %}
+
+    <div class="col-md-3" style="margin-left: 5em;">
+    
+    <div class="card" style="width: 100%; margin: 10px 10px; margin-top: 50px; ">
+    
+    
+          <img src="{{boletos.foto.url}}" class="card-img-top" style="">
+                  <div class="card__title">
+		                <h5>Destino: {{boletos.destino}}</h5> </a>
+		                <p> Precio: {{boletos.precio}} $ </p>
+                    <p>  Fecha de Salida: {{boletos.salida}}</p>
+		                <p>  Fecha de Llegada: {{boletos.llegada}} </p>
+		                
+
+	                  </div>
+          
+          {% if request.session.email%}
+
+          
+          <div class="card-footer text-center" > 
+          
+                <a href="{% url 'carro:agregar' boletos.destino %}" class="btn btn-success">   Agregar al Carro </a>
+
+	             
+	       
+          </div>
+
+          {% endif %}
+          
+      </div>
+  </div>
+
+
+  
+  
+
+    
+  
+
+
+    
+{% endfor %}
+  </div>
+</div>
+<div style="color: white; font-family: Bebas Neue; margin-left:500px; "> 
+ 
+ 
+  Pagina : {{line.number}} De {{line.paginator.num_pages}}</br>
+ 
+</div>
+
+<div style="color: white; font-family: Bebas Neue; justify:center;  margin-left:500px; "> 
+
+{% if line.has_previous %}
+
+<a href="?page=1">&laquo first  </a>
+<a href="?page={{line.previous_page_number}}">Pagina Previa </a>
+
+{% endif %}
+
+{% if line.has_next %}
+
+ <a href="?page={{line.next_page_number}}"> Next </a>
+
+ <a href="?page={{line.paginator.num_pages}}">Pagina Last </a>
+
+ 
+</div>
+
+
+{% endif %}
+
+{% endblock %}
+

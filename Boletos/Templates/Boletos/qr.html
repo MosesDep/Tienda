@@ -1,0 +1,77 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+{% if messages %}
+
+
+{% for message in messages%}
+    
+      <script>
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          text: "{{message}}",
+          showConfirmButton: true,
+          timer: 5000
+      })
+
+         
+        
+      </script>
+       
+   
+
+
+
+    
+{% endfor %}
+
+
+    
+
+
+
+
+{% endif%}
+ 
+
+ 
+
+
+<div style= "height: 200vw; width: 20vw;margin-top:50px; margin-left: 400px; " > 
+ 
+
+
+     
+ 
+<form  action="" method="POST">
+{% csrf_token %}
+
+{{form.captcha }}  
+
+ 
+  
+
+
+<a href="{%url 'comprar' %}"><button type="submit" class="boton-cv" style=" width: 25em; heigth= 24em; margin-top: 5em; margin-right: 2em; font-family:Bebas Neue; ">Enviar QR  </button></a>
+
+ 
+</form>
+
+
+ 
+
+ 
+
+</div> 
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,50 @@
+
+<h1 style="font-family:Bebas Neue; color:black; font-size:25px; margin-left:200px;"> TRAVEL TECHS  </h1>
+
+ 
+<h1 style="font-family:Bebas Neue; color:black;  font-size:25px; margin-left:200px;"> Reporte de movientos de Compras  </h1>
+{% if palabra  %}
+
+  <h1 style="color:black;  font-size:25px; margin-left:200px;">REPORTE CODIGO #:{{palabra}} </h1>
+{% endif %}
+  <table border="1" style="color:black; text-align:center;" >
+
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Inicio</th>
+            <th scope="col">Creador</th>
+            <th scope="col">Descripcion</th>
+             
+    
+    
+    
+          </tr>
+        </thead>
+        <tbody>
+    
+          {% for datoss in  datos %}
+    
+    
+     
+          <tr>
+     
+            <td style="padding-bottom:20px; margin-top:60px;">{{datoss.nombre}}</td>
+            <td>{{datoss.tipo}}</td>
+            <td>{{datoss.inicio}}</td>
+            <td>{{datoss.creadorpor}}</td>
+            <td>{{datoss.descripcion}}</td>
+            
+    
+    
+          </tr>
+          
+        </tbody>
+    
+        {% endfor %}
+    
+      </table>
+    </div>
+    
+   

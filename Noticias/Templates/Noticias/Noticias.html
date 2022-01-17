@@ -1,0 +1,88 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+{% for post in posts %}
+
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{post.foto.url}}" alt="" style="width: 50%; border: 7px solid aqua;">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-lower">{{post.titulo}}</span>
+            <span class="section-heading-upper">{{post.content}}</span>
+          </h2>
+          
+         <div style="text-align: left; font-color: black:"> 
+         
+         <h5> Autor:{{post.autor}} </h5> 
+         
+        </div> 
+        </div>
+      </div>
+    </div>
+  </section>
+
+    
+
+    {% endfor %}
+
+
+
+    <div style="color: white; font-family: Bebas Neue; margin-left:500px; "> 
+ 
+ 
+      Pagina : {{line.number}} De {{line.paginator.num_pages}}</br>
+     
+    </div>
+    
+    <div style="color: white; font-family: Bebas Neue; justify:center;  margin-left:500px; "> 
+    
+    {% if line.has_previous %}
+    
+    <a href="?page=1">&laquo first  </a>
+    <a href="?page={{line.previous_page_number}}">Pagina Previa </a>
+    
+    {% endif %}
+    
+    {% if line.has_next %}
+    
+     <a href="?page={{line.next_page_number}}"> Next </a>
+    
+     <a href="?page={{line.paginator.num_pages}}">Pagina Last </a>
+    
+     
+    </div>
+    
+    
+    {% endif %}
+
+
+    <div id="disqus_thread" style="margin-left:-50px; margin-top:100px;">
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://www-formula1-com-ve.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+{% endblock %}
+
+
+
+   

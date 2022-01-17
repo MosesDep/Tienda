@@ -1,0 +1,57 @@
+
+
+<h2 style="font-family:Bebas Neue; color:black;"> Reporte de Compra de Usuario  </h2>
+
+<h1 style="font-family:Bebas Neue; color:black; font-size:25px; margin-left:200px;"> TRAVEL TECHS  </h1>
+
+ 
+<h1 style="font-family:Bebas Neue; color:black;  font-size:25px; margin-left:200px;"> Reporte de movimientos de Compras  </h1>
+{% if palabra  %}
+
+  <h1 style="color:black;  font-size:25px; margin-left:200px;">REPORTE CODIGO #:{{palabra}} </h1>
+{% endif %}
+
+
+{% for datoss in  datos %}
+
+<h1 style="font-family:Bebas Neue; color:black;  font-size:25px; margin-left:200px;"> Correo De: {{datoss.mail}}  </h1>
+
+
+{% endfor  %}
+
+<table border="1" style="color:black; text-align:center;" >
+  <thead>
+      <tr>
+        <th scope="col">Codigo</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Correo</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for datoss in  datos %}
+
+
+ 
+      <tr>
+        <td style="padding-bottom:20px; margin-top:60px;">{{datoss.campo}}</td>
+        <td>{{datoss.precio}}</td>
+        <td>{{datoss.producto}}</td>
+        <td>{{datoss.cantidad}}</td>
+        <td>{{datoss.fecha}}</td>
+       
+
+
+      </tr>
+      
+    </tbody>
+
+    {% endfor %}
+
+  </table>
+
+</div>

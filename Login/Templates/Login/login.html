@@ -1,0 +1,75 @@
+{% extends "Busapp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+{% if messages %}
+
+
+{% for message in messages%}
+    
+      <script>
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          text: "{{message}}",
+          showConfirmButton: true,
+          timer: 5000
+      })
+
+         
+        
+      </script>
+       
+   
+
+
+
+    
+{% endfor %}
+
+
+    
+
+
+
+
+{% endif%}
+
+
+
+
+ 
+<div class="conteiner-login" style="border: 7px solid aqua;"> 
+    
+<a href="{% url 'inicio' %}"  ><img src="{% static 'Busapp/img/Logo.png' %}"   class="log-foto" alt=  > </a>
+
+
+<h5 style="margin-bottom: 5em;  margin-left:150px;">  Sing-Up </h5>
+
+<form method="POST" class="login-form"> 
+ {% csrf_token %}
+
+<input type="email" name="Email" placeholder="Ingresa tu Correo "  required pattern="?@gmail.com |?@outlook.com" style="margin-left:50px;" required >
+<input type="password" name="contrasena" placeholder="Ingresa tu Contraseña" style="margin-left:50px;" required  >
+
+
+<button type="submit" class="boton-cv" style=" width: 20em; heigth= 20em; margin-top: 5em; margin-right: 2em; margin-left: 2em; font-family:Bebas Neue; "> Iniciar Sesion </button>
+
+</form> 
+
+
+<a href="{% url 'contrasena' %}"style="text-decoration: none;" ><h5 style=" text-decoration: none; margin-left: 50px; margin-top: 10px;" > Olvidaste tu Contraseña </h5></a>
+<a href="{% url 'error' %}" style="text-decoration: none;" ><h5 style=" text-decoration: none; margin-left: 50px; "> Obten una Cuenta es Gratis </h5></a>
+
+
+
+</div>
+
+ 
+
+
+
+{% endblock %}
